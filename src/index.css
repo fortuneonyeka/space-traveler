@@ -1,9 +1,3 @@
 @tailwind base;  /* stylelint-disable-line */
 @tailwind components;  /* stylelint-disable-line */
 @tailwind utilities;  /* stylelint-disable-line */
-
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
