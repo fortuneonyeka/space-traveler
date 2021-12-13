@@ -1,3 +1,7 @@
 @tailwind base;  /* stylelint-disable-line */
 @tailwind components;  /* stylelint-disable-line */
 @tailwind utilities;  /* stylelint-disable-line */
+
+.active {
+  text-decoration: underline;
+}
