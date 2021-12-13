@@ -1,9 +1,10 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import logger from "redux-logger";
-import ThunkMiddleware from "redux-thunk";
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import ThunkMiddleware from 'redux-thunk';
+import missionsReducer from './Missions/missions';
 
 const reducer = combineReducers({
-  redicerslist,
+  missionsReducer,
 });
 
 const store = createStore(reducer, applyMiddleware(ThunkMiddleware, logger));
