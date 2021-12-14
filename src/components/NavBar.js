@@ -11,15 +11,20 @@ const NavBar = () => (
       </div>
 
       <nav className="space-x-4 items-center">
-        <NavLink to="/">
+        <NavLink
+          className="hover:text-white hover:bg-gray-400 p-4 hover:transform hover:translate-y-16"
+          to="/"
+        >
           Home
         </NavLink>
         <NavLink
+          className="hover:text-white hover:bg-gray-400"
           to="/Missions"
         >
           Missions
         </NavLink>
         <NavLink
+          className="hover:text-white hover:bg-gray-400"
           to="/my-profile"
         >
           {' '}
