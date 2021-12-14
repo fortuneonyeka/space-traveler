@@ -6,7 +6,7 @@ const Rockets = () => {
   const dispatch = useDispatch();
   const rocketList = useSelector((state) => state.rocketReducer);
   useEffect(() => {
-    if(rocketList.length === 0) dispatch(fetchRocketsAsync()); //eslint-disable-line
+    if (rocketList.length === 0) dispatch(fetchRocketsAsync());
   }, []);
   return (
     <div className="w-full max-w-7xl flex flex-col items-center">
