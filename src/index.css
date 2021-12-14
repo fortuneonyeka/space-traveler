@@ -4,4 +4,18 @@
 
 .active {
   text-decoration: underline;
+  transform: translateY(20px);
+  z-index: 10
+}
+
+nav .active:nth-child(1).active ~ .indicator{
+  left: -25px;
+}
+
+nav .active:nth-child(2).active ~ .indicator{
+  left: 58px;
+}
+
+nav .active:nth-child(3).active ~ .indicator{
+  left: 156px;
 }
