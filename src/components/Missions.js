@@ -15,10 +15,10 @@ const Missions = () => {
     return () => null;
   }, []);
   return (
-    <Container>
+    <Container className="mt-9 mb-9">
       <Table>
         <thead>
-          <tr>
+          <tr className="border-2 h-12">
             <th className="border-2">Mission</th>
             <th className="border-2">Description</th>
             <th className="border-2">Status</th>
@@ -27,25 +27,24 @@ const Missions = () => {
         <tbody>
           {missions.map((mission) => (
             <tr className="border-2" key={mission.mission_id}>
-              <td className="border-2">{mission.mission_name}</td>
-              <td className="p-3">{mission.description}</td>
-              <td className="align-middle">
+              <td className="border-2 w-40 p-8">{mission.mission_name}</td>
+              <td className="p-4 w-1/2">{mission.description}</td>
+              <td className="border-2 w-20 p-8">
                 {' '}
                 {mission.reserved ? (
-                  <Badge bg="primary">Active Member</Badge>
+                  <Badge>Active Member</Badge>
                 ) : (
                   <Button
-                    className="inline-flex items-center px-2.5 py-1.5 border
+                    className="inline-flex justify-center items-center px-2.5 py-1.5 border
     border-transparent text-xs font-medium rounded shadow-sm text-black
-    bg-gray-400 w-36 h-10 hover:bg-gray-100"
-                    bg="secondary"
+    bg-gray-400 w-30 h-10 hover:bg-gray-100"
                   >
                     NOT A MEMBER
                   </Button>
                 )}
                 {' '}
               </td>
-              <td className="align-middle">
+              <td className="align-middle w-20 px-8">
                 <JoinLeaveButton
                   reserved={mission.reserved}
                   id={mission.mission_id}
