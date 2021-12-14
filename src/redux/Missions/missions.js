@@ -2,20 +2,28 @@ const URL = 'https://api.spacexdata.com/v3/missions';
 
 // Actions
 const LOAD = 'space-traveler/missions/LOAD';
-// const SELECT = 'spaceships/missions/SELECT';
+const SELECT = 'space-traveler/missions/SELECT';
+const LEAVE = 'space-traveler/missions/LEAVE';
 
 // Reducer
 export default (state = [], action) => {
   switch (action.type) {
     case LOAD:
       return action.state;
-    // case SELECT: {
-    //   const newState = state.map((mission) => {
-    //     if (mission.mission_id !== action.payload) return mission;
-    //     return { ...mission, reserved: true };
-    //   });
-    //   return newState;
-    // }
+    case SELECT: {
+      const newState = state.map((mission) => {
+        if (mission.mission_id !== action.payload) return mission;
+        return { ...mission, reserved: true };
+      });
+      return newState;
+    }
+    case LEAVE: {
+      const newState = state.map((mission) => {
+        if (mission.mission_id !== action.payload) return mission;
+        return { ...mission, reserved: false };
+      });
+      return newState;
+    }
     default:
       return state;
   }
@@ -33,7 +41,12 @@ export const loadMissions = () => async (dispatch) => {
   dispatch({ type: LOAD, state });
 };
 
-// export const selectMission = (payload) => ({
-//   type: SELECT,
-//   payload,
-// });
+export const joinMission = (payload) => ({
+  type: SELECT,
+  payload,
+});
+
+export const leaveMission = (payload) => ({
+  type: LEAVE,
+  payload,
+});

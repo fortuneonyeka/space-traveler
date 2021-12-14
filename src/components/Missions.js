@@ -4,6 +4,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { loadMissions } from '../redux/Missions/missions';
+import JoinLeaveButton from './JoinLeaveButton';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -13,8 +14,8 @@ const Missions = () => {
     return () => null;
   }, []);
   return (
-    <Container className="w-full max-w-7xl flex flex-col items-center">
-      <Table className="stripe-5 border-2 space-y-4 tems-center">
+    <Container>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Mission</th>
@@ -32,21 +33,17 @@ const Missions = () => {
                 <Button
                   className="inline-flex items-center px-2.5 py-1.5 border
     border-transparent text-xs font-medium rounded shadow-sm text-black
-    bg-gray-500 w-50"
+    bg-gray-400 w-36 hover:bg-gray-50"
                 >
                   Not a Member
                 </Button>
                 {' '}
               </td>
               <td>
-                <Button
-                  className="inline-flex items-center px-2.5 py-1.5 border
-    border-transparent text-xs font-medium rounded shadow-sm text-black
-    bg-gray-200 hover:bg-indigo-700 w-50"
-                >
-                  Join Mission
-                </Button>
-                {' '}
+                <JoinLeaveButton
+                  reserved={mission.reserved}
+                  id={mission.mission_id}
+                />
               </td>
             </tr>
           ))}
