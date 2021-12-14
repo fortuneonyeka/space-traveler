@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 import { loadMissions } from '../redux/Missions/missions';
 
 const Missions = () => {
@@ -10,30 +13,46 @@ const Missions = () => {
     return () => null;
   }, []);
   return (
-    <div className="w-full max-w-7xl flex flex-col items-center">
-      <ul className="w-full space-y-5">
-        {missions.map((mission) => (
-          <li className="flex" key={mission.mission_id}>
-            <div>
-              <h1>Mission:</h1>
-              <h2>{mission.mission_name}</h2>
-              <p>Description:</p>
-              <p>{mission.description}</p>
-              <p>Status:</p>
-              <span className="space-x-5">Not a Member</span>
-              <button
-                type="button"
-                className="inline-flex items-center px-2.5 py-1.5 border
-    border-transparent text-xs font-medium rounded shadow-sm text-white
-    bg-indigo-600 hover:bg-indigo-700"
-              >
-                Join Mission
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Container>
+      <Table className="striped bordered hover">
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => (
+            <tr key={mission.mission_id}>
+              <td>{mission.mission_name}</td>
+              <td>{mission.description}</td>
+              <td>
+                {' '}
+                <Button
+                  className="inline-flex items-center px-2.5 py-1.5 border
+    border-transparent text-xs font-medium rounded shadow-sm text-black
+    bg-gray-500"
+                >
+                  Not a Member
+                </Button>
+                {' '}
+              </td>
+              <td>
+                <Button
+                  className="inline-flex items-center px-2.5 py-1.5 border
+    border-transparent text-xs font-medium rounded shadow-sm text-black
+    bg-gray-200 hover:bg-indigo-700"
+                >
+                  Join Mission
+                </Button>
+                {' '}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </Container>
   );
 };
 
