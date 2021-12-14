@@ -1,18 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
 import rocketIcon from '../assets/icon-rocket.svg';
 
 const MyProfile = () => {
   const rocketList = useSelector((state) => state.rocketReducer);
-  const missions = useSelector((state) => state.missionsReducer);
   return (
     <div className="w-full max-w-7xl flex flex-col items-center justify-start p-4">
       <div className="w-full grid grid-cols-2 gap-8">
-        <div className="w-full">
-        </div>
+        <div className="w-full" />
         <div className="w-full">
           <h1 className="w-full text-3xl text-center text-indigo-500 font-bold">
             {' '}
@@ -55,4 +50,5 @@ const MyProfile = () => {
     </div>
   );
 };
+
 export default MyProfile;
