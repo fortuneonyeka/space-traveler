@@ -13,8 +13,8 @@ const Missions = () => {
     return () => null;
   }, []);
   return (
-    <Container>
-      <Table className="striped bordered hover">
+    <Container className="w-full max-w-7xl flex flex-col items-center">
+      <Table className="stripe-5 border-2 space-y-4 tems-center">
         <thead>
           <tr>
             <th>Mission</th>
@@ -32,7 +32,7 @@ const Missions = () => {
                 <Button
                   className="inline-flex items-center px-2.5 py-1.5 border
     border-transparent text-xs font-medium rounded shadow-sm text-black
-    bg-gray-500"
+    bg-gray-500 w-50"
                 >
                   Not a Member
                 </Button>
@@ -42,7 +42,7 @@ const Missions = () => {
                 <Button
                   className="inline-flex items-center px-2.5 py-1.5 border
     border-transparent text-xs font-medium rounded shadow-sm text-black
-    bg-gray-200 hover:bg-indigo-700"
+    bg-gray-200 hover:bg-indigo-700 w-50"
                 >
                   Join Mission
                 </Button>
