@@ -12,7 +12,7 @@ describe('Missions component', () => {
         </Provider>
       );
 
-     expect(await screen.findAllByText('Thaicom')).toBeTruthy();
+      expect(await screen.findAllByText('Thaicom')).toBeTruthy();
       expect(missionsComponent.asFragment()).toMatchSnapshot();
     });
   });
