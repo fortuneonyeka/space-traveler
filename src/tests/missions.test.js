@@ -27,7 +27,7 @@ describe('Unit tests for missions', () => {
   describe('reducers', () => {
     it('returns the correct state for LOAD action', () => {
       expect(
-        missionsReducer([], { type: LOAD, state: actionLoadMock })
+        missionsReducer([], { type: LOAD, state: actionLoadMock }),
       ).toEqual(actionLoadMock);
     });
     it('returns the correct state for SELECT action', () => {
@@ -42,7 +42,7 @@ describe('Unit tests for missions', () => {
         missionsReducer(actionLoadMock.state, {
           type: SELECT,
           payload: 'mission1',
-        })
+        }),
       ).toEqual(expectedSelectOutputState);
     });
     it('returns the correct state for LEAVE action', () => {
@@ -57,7 +57,7 @@ describe('Unit tests for missions', () => {
         missionsReducer(actionLoadMock.state, {
           type: LEAVE,
           payload: 'mission1',
-        })
+        }),
       ).toEqual(expectedLeaveOutputState);
     });
   });
@@ -67,7 +67,7 @@ describe('Unit tests for missions', () => {
       await loadMissions()(dispatchMock);
       expect(expectedOutputAction.type).toEqual(LOAD);
       expect(expectedOutputAction.state).toEqual(
-        expect.arrayContaining([expect.any(Object)])
+        expect.arrayContaining([expect.any(Object)]),
       );
     });
     it("returns the correct action for 'joinMission' function", () => {
@@ -78,5 +78,3 @@ describe('Unit tests for missions', () => {
     });
   });
 });
-
-

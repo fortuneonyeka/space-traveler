@@ -9,7 +9,7 @@ describe('Missions component', () => {
       const missionsComponent = render(
         <Provider store={store}>
           <Missions />
-        </Provider>
+        </Provider>,
       );
 
       expect(await screen.findAllByText('Thaicom')).toBeTruthy();
