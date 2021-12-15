@@ -61,4 +61,22 @@ describe('Unit tests for missions', () => {
       ).toEqual(expectedLeaveOutputState);
     });
   });
+
+  describe('action creators', () => {
+    it("returns the correct action for 'loadMissions' thunk", async () => {
+      await loadMissions()(dispatchMock);
+      expect(expectedOutputAction.type).toEqual(LOAD);
+      expect(expectedOutputAction.state).toEqual(
+        expect.arrayContaining([expect.any(Object)])
+      );
+    });
+    it("returns the correct action for 'joinMission' function", () => {
+      expect(joinMission('mission1').type).toEqual(SELECT);
+    });
+    it("returns the correct action for 'leaveMission' function", () => {
+      expect(leaveMission('mission1').type).toEqual(LEAVE);
+    });
+  });
 });
+
+
