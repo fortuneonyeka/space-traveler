@@ -4,7 +4,6 @@ import missionsReducer, {
   leaveMission,
 } from '../redux/Missions/missions';
 
-
 describe('Unit tests for missions', () => {
   jest.mock('../redux/missions/missions');
   let expectedOutputAction;
@@ -27,9 +26,9 @@ describe('Unit tests for missions', () => {
   };
   describe('reducers', () => {
     it('returns the correct state for LOAD action', () => {
-      expect(missionsReducer([], { type: LOAD, state: actionLoadMock })).toEqual(
-        actionLoadMock
-      );
+      expect(
+        missionsReducer([], { type: LOAD, state: actionLoadMock })
+      ).toEqual(actionLoadMock);
     });
     it('returns the correct state for SELECT action', () => {
       const expectedSelectOutputState = [
@@ -62,5 +61,4 @@ describe('Unit tests for missions', () => {
       ).toEqual(expectedLeaveOutputState);
     });
   });
-  
 });
