@@ -5,7 +5,7 @@ import missionsReducer, {
 } from '../redux/Missions/missions';
 
 describe('Unit tests for missions', () => {
-  jest.mock('../redux/missions/missions');
+  jest.mock('../redux/Missions/missions');
   let expectedOutputAction;
   const dispatchMock = (input) => {
     expectedOutputAction = input;
