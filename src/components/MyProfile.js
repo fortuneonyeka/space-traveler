@@ -24,6 +24,17 @@ const MyProfile = () => {
                   <ListGroup key={filteredMission.mission_id}>
                     <ListGroup.Item className="text-xl border uppercase font-semibold bg-gray-100 p-4 grid grid-cols-3 items-center justify-items-center">
                       {filteredMission.mission_name}
+                      {/* info icon to dsiplay the details  of the mission on hover */}
+                      <div className="relative rounded-full group">
+                        <img
+                          className="w-6 h-6"
+                          src="https://img.icons8.com/material-outlined/50/000000/info.png"
+                          alt="more info"
+                        />
+                        <span className="absolute w-80 hidden group-hover:block bg-indigo-100 z-20 p-4 border border-indigo-600 rounded-lg right-8 -top-20 text-sm font-bold font-mono">
+                          {filteredMission.description}
+                        </span>
+                      </div>
                     </ListGroup.Item>
                   </ListGroup>
                 ))}
